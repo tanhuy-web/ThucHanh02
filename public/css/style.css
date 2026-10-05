@@ -1,0 +1,735 @@
+/* ==========================================================================
+   1. CẤU TRÚC CHUNG (BASE & RESET)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F8FAFC;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* Khung giới hạn độ rộng giao diện */
+.khung-chua {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================================================
+   2. ĐẦU TRANG (HEADER)
+   ========================================================================== */
+.dau-trang {
+    background-color: #2E7D32; /* Màu chủ đạo xanh lá đậm theo bản đặc tả */
+    color: #ffffff; /* Chữ trong đầu trang màu trắng */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dau-trang-noi-dung {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-thuong-hieu {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff; /* Chữ logo màu trắng */
+    letter-spacing: 1px;
+}
+
+/* Thanh tìm kiếm */
+.thanh-tim-kiem {
+    display: flex;
+    flex: 1;
+    max-width: 400px;
+}
+
+.thanh-tim-kiem input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    font-size: 14px;
+}
+
+.thanh-tim-kiem button {
+    padding: 8px 16px;
+    background-color: #EA580C; /* Màu nhấn cam tươi */
+    color: #ffffff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.thanh-tim-kiem button:hover {
+    background-color: #c2410c;
+}
+
+/* Menu điều hướng */
+.menu-dieu-huong {
+    display: flex;
+    gap: 15px;
+}
+
+.menu-dieu-huong a {
+    color: #ffffff; /* Chữ đường dẫn menu màu trắng */
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.menu-dieu-huong a:hover,
+.menu-dieu-huong a.kich-hoat {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   3. BANNER GIỚI THIỆU (HERO BANNER)
+   ========================================================================== */
+.khoi-banner {
+    background-color: #1b5e20;
+    background-image: linear-gradient(rgba(46, 125, 50, 0.85), rgba(27, 94, 32, 0.85)), url('https://placehold.co/1200x400?text=Banner+BookWise');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.noi-dung-banner h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.noi-dung-banner p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.nut-kham-pha {
+    display: inline-block;
+    background-color: #EA580C; /* Màu nhấn cam */
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.nut-kham-pha:hover {
+    background-color: #c2410c;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   4. KHỐI SẢN PHẨM (BOOKS GRID)
+   ========================================================================== */
+.khoi-san-pham {
+    padding: 50px 0;
+}
+
+.nen-xanh-nhat {
+    background-color: #e8f5e9;
+}
+
+.tieu-de-khoi {
+    text-align: center;
+    font-size: 26px;
+    color: #2E7D32;
+    margin-bottom: 35px;
+}
+
+.danh-sach-san-pham {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+/* Thẻ sản phẩm */
+.the-san-pham {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 15px;
+    width: calc(25% - 18px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.the-san-pham:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.anh-san-pham {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    object-fit: cover;
+}
+
+.ten-san-pham {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #1a1a1a;
+}
+
+.tac-gia {
+    font-size: 13px;
+    color: #666666;
+    margin-bottom: 8px;
+}
+
+.gia-san-pham {
+    font-size: 16px;
+    font-weight: 700;
+    color: #EA580C;
+    margin-bottom: 15px;
+    margin-top: auto;
+}
+
+.nut-chi-tiet {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    background-color: #2E7D32;
+    color: #ffffff;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.nut-chi-tiet:hover {
+    background-color: #1b5e20;
+}
+
+/* ==========================================================================
+   5. KHỐI CẢM NHẬN ĐỘC GIẢ (TESTIMONIALS)
+   ========================================================================== */
+.khoi-cam-nhan {
+    padding: 50px 0;
+    background-color: #ffffff;
+}
+
+.danh-sach-cam-nhan {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.the-cam-nhan {
+    background-color: #F8FAFC;
+    border-left: 4px solid #2E7D32;
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+    flex: 1;
+}
+
+.noi-dung-danh-gia {
+    font-style: italic;
+    margin-bottom: 12px;
+    color: #444444;
+}
+
+.nguoi-danh-gia {
+    font-size: 14px;
+    color: #2E7D32;
+}
+
+/* ==========================================================================
+   6. CHÂN TRANG (FOOTER)
+   ========================================================================== */
+.chan-trang {
+    background-color: #1b5e20;
+    color: #ffffff;
+    padding-top: 40px;
+}
+
+.noi-dung-chan-trang {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+.cot-chan-trang {
+    flex: 1;
+}
+
+.cot-chan-trang h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    border-bottom: 2px solid #EA580C;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.cot-chan-trang p,
+.cot-chan-trang li {
+    font-size: 14px;
+    color: #d1e7dd;
+    margin-bottom: 8px;
+}
+
+.cot-chan-trang a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.ban-quyen {
+    background-color: #144417;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 13px;
+    color: #a3cfbb;
+}
+
+/* ==========================================================================
+   7. HIỂN THỊ TRÊN ĐIỆN THOẠI (RESPONSIVE - MOBILE)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Đổi Header thành xếp dọc */
+    .dau-trang-noi-dung {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .thanh-tim-kiem {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Menu trên điện thoại: Tự động xuống dòng gọn gàng và căn giữa */
+    .menu-dieu-huong {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap; /* Cho phép các mục tự ngắt dòng khi hết khoảng trống */
+        gap: 8px; /* Thu nhỏ khoảng cách giữa các thẻ link */
+    }
+
+    .menu-dieu-huong a {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    .noi-dung-banner h1 {
+        font-size: 22px;
+    }
+
+    .noi-dung-banner p {
+        font-size: 15px;
+    }
+
+    /* Đổi thẻ sản phẩm từ 4 cột thành 1 cột xếp chồng */
+    .the-san-pham {
+        width: 100%;
+    }
+
+    /* Đổi khối cảm nhận thành 1 cột */
+    .danh-sach-cam-nhan {
+        flex-direction: column;
+    }
+
+    /* Đổi chân trang thành 1 cột */
+    .noi-dung-chan-trang {
+        flex-direction: column;
+    }
+}
+
+/* ==========================================================================
+   8. BỔ SUNG: THANH TIÊU ĐỀ TRANG DÙNG CHUNG
+   ========================================================================== */
+.thanh-tieu-de-trang {
+    background-color: #e8f5e9;
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 1px solid #c8e6c9;
+}
+
+.thanh-tieu-de-trang h1 {
+    color: #2E7D32;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.thanh-tieu-de-trang p {
+    color: #555555;
+    font-size: 15px;
+}
+
+/* ==========================================================================
+   9. BỔ SUNG: TRANG DANH MỤC SÁCH (DANH-SACH.HTML)
+   ========================================================================== */
+.trang-danh-sach-container {
+    display: flex;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+/* Cột bộ lọc */
+.khung-bo-loc {
+    width: 260px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    align-self: flex-start;
+}
+
+.tieu-de-bo-loc {
+    font-size: 18px;
+    color: #2E7D32;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2E7D32;
+    margin-bottom: 18px;
+}
+
+.nhom-bo-loc {
+    margin-bottom: 20px;
+}
+
+.nhom-bo-loc h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.muc-bo-loc {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    color: #555;
+}
+
+.muc-bo-loc input {
+    margin-right: 8px;
+}
+
+.nut-loc {
+    width: 100%;
+    padding: 10px;
+    background-color: #2E7D32;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nut-loc:hover {
+    background-color: #1b5e20;
+}
+
+/* Danh sách sách main */
+.khung-danh-sach-main {
+    flex: 1;
+}
+
+.thanh-sap-xep {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.o-sap-xep {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.khung-danh-sach-main .the-san-pham {
+    width: calc(33.333% - 16px); /* Chia 3 cột bên trang danh sách */
+}
+
+/* Phân trang */
+.phan-trang {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 35px;
+}
+
+.trang-lien-ket {
+    padding: 8px 14px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.trang-lien-ket.kich-hoat,
+.trang-lien-ket:hover {
+    background-color: #2E7D32;
+    color: #ffffff;
+    border-color: #2E7D32;
+}
+
+/* ==========================================================================
+   10. BỔ SUNG: TRANG CHI TIẾT SÁCH (CHI-TIET.HTML)
+   ========================================================================== */
+.duong-dan-trang {
+    padding: 15px 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.duong-dan-trang a {
+    color: #2E7D32;
+}
+
+.trang-chi-tiet-container {
+    display: flex;
+    gap: 40px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    margin-top: 10px;
+}
+
+.cot-anh-chi-tiet {
+    flex: 1;
+    max-width: 400px;
+}
+
+.anh-chi-tiet-lon {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cot-thong-tin-chi-tiet {
+    flex: 1.5;
+}
+
+.ten-sach-chi-tiet {
+    font-size: 26px;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.tac-gia-chi-tiet {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.khung-gia-chi-tiet {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    background-color: #f8fafc;
+    padding: 12px 20px;
+    border-radius: 8px;
+}
+
+.gia-hien-tai {
+    font-size: 28px;
+    font-weight: 700;
+    color: #EA580C;
+}
+
+.gia-goc {
+    font-size: 16px;
+    text-decoration: line-through;
+    color: #888888;
+}
+
+.tom-tat-ngan {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.thong-tin-bo-sung p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.nut-lien-he-dat-mua {
+    display: inline-block;
+    background-color: #EA580C;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.nut-lien-he-dat-mua:hover {
+    background-color: #c2410c;
+}
+
+.khoi-mo-ta-chi-tiet {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+}
+
+.tieu-de-khoi-nho {
+    font-size: 20px;
+    color: #2E7D32;
+    border-bottom: 2px solid #2E7D32;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.noi-dung-mo-ta p,
+.noi-dung-mo-ta li {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+/* ==========================================================================
+   11. BỔ SUNG: TRANG GIỚI THIỆU (GIOI-THIEU.HTML)
+   ========================================================================== */
+.trang-gioi-thieu-container {
+    padding: 40px 20px;
+}
+
+.khoi-cau-chuyen {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+}
+
+.noi-dung-cau-chuyen {
+    flex: 1;
+}
+
+.noi-dung-cau-chuyen h2 {
+    font-size: 24px;
+    color: #2E7D32;
+    margin-bottom: 15px;
+}
+
+.noi-dung-cau-chuyen p {
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: #444;
+}
+
+.anh-cau-chuyen {
+    flex: 1;
+}
+
+.anh-cau-chuyen img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.khoi-su-menh-grid {
+    display: flex;
+    gap: 24px;
+}
+
+.the-su-menh {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    border-top: 4px solid #2E7D32;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+.the-su-menh h3 {
+    font-size: 18px;
+    color: #2E7D32;
+    margin-bottom: 12px;
+}
+
+.the-su-menh p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* ==========================================================================
+   12. BỔ SUNG RESPONSIVE MOBILE CHO CÁC TRANG MỚI
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Trang Danh mục sản phẩm */
+    .trang-danh-sach-container {
+        flex-direction: column;
+    }
+
+    .khung-bo-loc {
+        width: 100%;
+    }
+
+    .khung-danh-sach-main .the-san-pham {
+        width: 100%; /* Chuyển thành 1 cột trên điện thoại */
+    }
+
+    /* Trang Chi tiết sản phẩm */
+    .trang-chi-tiet-container {
+        flex-direction: column;
+    }
+
+    .cot-anh-chi-tiet {
+        max-width: 100%;
+    }
+
+    /* Trang Giới thiệu */
+    .khoi-cau-chuyen {
+        flex-direction: column;
+    }
+
+    .khoi-su-menh-grid {
+        flex-direction: column;
+    }
+}

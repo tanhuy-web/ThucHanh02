@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tất Cả Sách - BookWise</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Nạp file CSS chung -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ĐẦU TRANG (HEADER) -->
+    <header class="dau-trang">
+        <div class="khung-chua dau-trang-noi-dung">
+            <a href="index.html" class="logo-thuong-hieu">BookWise</a>
+            
+            <div class="thanh-tim-kiem">
+                <input type="text" placeholder="Tìm kiếm tên sách, tác giả...">
+                <button type="button">Tìm</button>
+            </div>
+
+            <nav class="menu-dieu-huong">
+                <a href="index.html">Trang chủ</a>
+                <a href="danh-sach.html" class="kich-hoat">Tất cả sách</a>
+                <a href="gioi-thieu.html">Giới thiệu</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- TIÊU ĐỀ TRANG -->
+    <div class="thanh-tieu-de-trang">
+        <div class="khung-chua">
+            <h1>Danh Mục Tất Cả Sách</h1>
+            <p>Tìm kiếm cuốn sách phù hợp nhất để nâng cao kỹ năng và tư duy của bạn.</p>
+        </div>
+    </div>
+
+    <!-- NỘI DUNG CHÍNH: BỘ LỌC + DANH SÁCH SÁCH -->
+    <main class="khung-chua trang-danh-sach-container">
+        
+        <!-- CỘT BÊN TRÁI: BỘ LỌC SẢN PHẨM -->
+        <aside class="khung-bo-loc">
+            <h2 class="tieu-de-bo-loc">Bộ Lọc Sách</h2>
+            
+            <!-- Lọc theo thể loại -->
+            <div class="nhom-bo-loc">
+                <h3>Thể Loại</h3>
+                <label class="muc-bo-loc"><input type="checkbox" checked> Sách Kỹ Năng Sống</label>
+                <label class="muc-bo-loc"><input type="checkbox"> Phát Triển Bản Thân</label>
+                <label class="muc-bo-loc"><input type="checkbox"> Kinh Doanh & Đầu Tư</label>
+                <label class="muc-bo-loc"><input type="checkbox"> Tư Duy & Lãnh Đạo</label>
+            </div>
+
+            <!-- Lọc theo giá -->
+            <div class="nhom-bo-loc">
+                <h3>Mức Giá</h3>
+                <label class="muc-bo-loc"><input type="radio" name="gia"> Dưới 100.000 đ</label>
+                <label class="muc-bo-loc"><input type="radio" name="gia"> 100.000 đ - 200.000 đ</label>
+                <label class="muc-bo-loc"><input type="radio" name="gia"> Trên 200.000 đ</label>
+            </div>
+
+            <button type="button" class="nut-loc">Áp dụng lọc</button>
+        </aside>
+
+        <!-- CỘT BÊN PHẢI: LƯỚI SẢN PHẨM -->
+        <section class="khung-danh-sach-main">
+            <div class="thanh-sap-xep">
+                <p>Hiển thị <strong>6</strong> sản phẩm</p>
+                <select class="o-sap-xep">
+                    <option>Sắp xếp: Mới nhất</option>
+                    <option>Giá: Thấp đến Cao</option>
+                    <option>Giá: Cao đến Thấp</option>
+                    <option>Bán chạy nhất</option>
+                </select>
+            </div>
+
+            <div class="danh-sach-san-pham">
+                <div class="the-san-pham">
+                    <img src="https://placehold.co/300x400?text=Dac+Nhan+Tam" alt="Đắc Nhân Tâm" class="anh-san-pham">
+                    <h3 class="ten-san-pham">Đắc Nhân Tâm</h3>
+                    <p class="tac-gia">Dale Carnegie</p>
+                    <p class="gia-san-pham">120.000 đ</p>
+                    <a href="chi-tiet.html" class="nut-chi-tiet">Xem chi tiết</a>
+                </div>
+
+                <div class="the-san-pham">
+                    <img src="https://placehold.co/300x400?text=Thoi+Quen+Nguyen+Tu" alt="Thói Quen Nguyên Tử" class="anh-san-pham">
+                    <h3 class="ten-san-pham">Thói Quen Nguyên Tử</h3>
+                    <p class="tac-gia">James Clear</p>
+                    <p class="gia-san-pham">150.000 đ</p>
+                    <a href="chi-tiet.html" class="nut-chi-tiet">Xem chi tiết</a>
+                </div>
+
+                <div class="the-san-pham">
+                    <img src="https://placehold.co/300x400?text=Tu+Duy+Nhanh+Va+Chua" alt="Tư Duy Nhanh Và Chậm" class="anh-san-pham">
+                    <h3 class="ten-san-pham">Tư Duy Nhanh Và Chậm</h3>
+                    <p class="tac-gia">Daniel Kahneman</p>
+                    <p class="gia-san-pham">180.000 đ</p>
+                    <a href="chi-tiet.html" class="nut-chi-tiet">Xem chi tiết</a>
+                </div>
+
+                <div class="the-san-pham">
+                    <img src="https://placehold.co/300x400?text=Cha+Giau+Cha+Ngheo" alt="Cha Giàu Cha Nghèo" class="anh-san-pham">
+                    <h3 class="ten-san-pham">Cha Giàu Cha Nghèo</h3>
+                    <p class="tac-gia">Robert Kiyosaki</p>
+                    <p class="gia-san-pham">110.000 đ</p>
+                    <a href="chi-tiet.html" class="nut-chi-tiet">Xem chi tiết</a>
+                </div>
+
+                <div class="the-san-pham">
+                    <img src="https://placehold.co/300x400?text=Phi+Ly+Tri" alt="Phi Lý Trí" class="anh-san-pham">
+                    <h3 class="ten-san-pham">Phi Lý Trí</h3>
+                    <p class="tac-gia">Dan Ariely</p>
+                    <p class="gia-san-pham">135.000 đ</p>
+                    <a href="chi-tiet.html" class="nut-chi-tiet">Xem chi tiết</a>
+                </div>
+
+                <div class="the-san-pham">
+                    <img src="https://placehold.co/300x400?text=Doi+Ngan+Dung+Ngu+Dai" alt="Đời Ngắn Đừng Ngủ Dài" class="anh-san-pham">
+                    <h3 class="ten-san-pham">Đời Ngắn Đừng Ngủ Dài</h3>
+                    <p class="tac-gia">Robin Sharma</p>
+                    <p class="gia-san-pham">95.000 đ</p>
+                    <a href="chi-tiet.html" class="nut-chi-tiet">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <!-- PHÂN TRANG -->
+            <div class="phan-trang">
+                <a href="#" class="trang-lien-ket kich-hoat">1</a>
+                <a href="#" class="trang-lien-ket">2</a>
+                <a href="#" class="trang-lien-ket">3</a>
+                <a href="#" class="trang-lien-ket">Tiếp »</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- CHÂN TRANG (FOOTER) -->
+    <footer class="chan-trang">
+        <div class="khung-chua noi-dung-chan-trang">
+            <div class="cot-chan-trang">
+                <h3>Về BookWise</h3>
+                <p>BookWise là trang web chia sẻ và cung cấp những đầu sách kỹ năng, phát triển bản thân và kinh doanh hay nhất.</p>
+            </div>
+            <div class="cot-chan-trang">
+                <h3>Thông Tin Liên Hệ</h3>
+                <p>Địa chỉ: 123 Đường Tri Thức, Quận 1, TP.HCM</p>
+                <p>Điện thoại: 0123 456 789</p>
+                <p>Email: hotro@bookwise.vn</p>
+            </div>
+            <div class="cot-chan-trang">
+                <h3>Liên Kết Nhanh</h3>
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="danh-sach.html">Tất cả sách</a></li>
+                    <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="ban-quyen">
+            <p>Copyright © 2026 BookWise. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
